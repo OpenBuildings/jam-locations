@@ -82,12 +82,20 @@ class Model_Address extends Jam_Model {
 			));
 	}
 }
+
+$address = Jam::build('address');
+
+$address->country = Jam::find('location', 'France');
+$address->city = Jam::build('location', array('name' => 'Paris'));
+
+$address->save();
+
+echo $address->city->parent->name(); // will return "France"
 ```
 
+## Requirement
 
-## Details
-
-Some specific features you want to mention
+This module requires php geoip extension.
 
 ## License
 
