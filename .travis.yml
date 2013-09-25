@@ -8,11 +8,22 @@ script:
   - phpunit --coverage-clover build/logs/clover.xml
 
 before_script:
+
+	- sudo apt-get install geoip-bin
+	- sudo apt-get install geoip-database
+	- sudo apt-get install libgeoip-dev
+	- ls -l /usr/share/GeoIP
+	- wget https://github.com/downloads/lunetics/TimezoneBundle/GeoLiteCity.dat.gz
+	- gunzip GeoLiteCity.dat.gz
+	- sudo mkdir -p /usr/share/GeoIP
+	- sudo mv GeoLiteCity.dat /usr/share/GeoIP/GeoIPCity.dat
+	- pecl install geoip
+
   - mkdir -p build/logs
   - composer require --dev satooshi/php-coveralls:dev-master
   - composer install
-  # - mysql -e 'create database `test-PACKAGE-NAME`;'
-  # - mysql --default-character-set=utf8 test-PACKAGE-NAME < tests/test_data/structure.sql
+  - mysql -e 'create database `test-jam-locations`;'
+  - mysql --default-character-set=utf8 test-jam-locations < tests/test_data/structure.sql
 
 after_script:
   - php vendor/bin/coveralls -v

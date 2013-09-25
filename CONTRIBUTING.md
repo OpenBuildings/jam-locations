@@ -1,6 +1,6 @@
 __Issues__
 
-If you have a question, something is not working or you want to make a suggestion, feel free to open a new issue here - https://github.com/openbuildings/PACKAGE_NAME/issues/new.
+If you have a question, something is not working or you want to make a suggestion, feel free to open a new issue here - https://github.com/openbuildings/jam-locations/issues/new.
 
 Checkout existing issues before opening a new one.
 

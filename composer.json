@@ -1,29 +1,35 @@
 {
-	"name": "openbuildings/PACKAGE_NAME",
-	"description": "YOUR DESCRIPTION",
+	"name": "openbuildings/jam-locations",
+	"description": "Geoip and IP integration",
 	"type": "kohana-module",
 	"keywords": [
-		"KEYWORD1",
-		"KEYWORD2",
-		"KEYWORD3",
-		"KEYWORD4",
-		"KEYWORD5"
+		"kohana",
+		"geoip",
+		"location",
+		"country",
+		"city"
 	],
-	"homepage": "https://github.com/OpenBuildings/PACKAGE_NAME",
+	"homepage": "https://github.com/OpenBuildings/jam-locations",
 	"license": "BSD-3-Clause",
 	"authors": [
 		{
-			"name": "NAME AS IN GITHUB",
-			"email": "AUTHOR EMAIL AS IN GITHUB",
+			"name": "Ivan Kerin",
+			"email": "ikerin@gmail.com",
 			"role": "Author"
-		},
+		}
 	],
 	"support": {
-		"issues": "https://github.com/OpenBuildings/PACKAGE_NAME/issues",
-		"source": "https://github.com/OpenBuildings/PACKAGE_NAME"
+		"issues": "https://github.com/OpenBuildings/jam-locations/issues",
+		"source": "https://github.com/OpenBuildings/jam-locations"
 	},
 	"require": {
 		"php": ">=5.4.0",
-		"composer/installers": "*"
+    "ext-geoip": "*",
+		"composer/installers": "*",
+		"openbuildings/jam-closuretable": "0.1.*"
+	},
+	"require-dev": {
+		"openbuildings/kohana-test-bootsrap": "0.1.*",
+		"openbuildings/environment-backup": "0.1.*"
 	}
 }

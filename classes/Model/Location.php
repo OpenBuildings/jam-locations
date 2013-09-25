@@ -1,3 +1,3 @@
 <?php defined('SYSPATH') OR die('No direct script access.');
 
-return array();
+class Model_Location extends Kohana_Model_Location {}

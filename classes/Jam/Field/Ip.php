@@ -1,3 +1,3 @@
 <?php defined('SYSPATH') OR die('No direct script access.');
 
-class Example extends Kohan_Example
+class Jam_Field_Ip extends Kohana_Jam_Field_Ip {}
