@@ -42,7 +42,7 @@ VALUES
   (4,'Turkey', 'TR', 'country'),
   (5,'Germany', 'GR', 'country'),
   (6,'Australia', 'AU', 'country'),
-  (7,'United Kingdom', 'UK', 'country'),
+  (7,'United Kingdom', 'GB', 'country'),
   (8,'Russia', 'RU', 'country'),
   (9,'London', NULL, 'city');
 
