@@ -24,11 +24,11 @@
 	},
 	"require": {
 		"php": ">=5.4.0",
-    "ext-geoip": "*",
 		"composer/installers": "*",
 		"openbuildings/jam-closuretable": "0.1.*"
 	},
 	"require-dev": {
+    "ext-geoip": "*",
 		"openbuildings/kohana-test-bootsrap": "0.1.*",
 		"openbuildings/environment-backup": "0.1.*"
 	}

@@ -30,6 +30,9 @@ class Kohana_Jam_Behavior_Location_Auto extends Jam_Behavior {
 
 	public function geoip_record($ip)
 	{
+		if ( ! extension_loaded('geoip'))
+			return array();
+		
 		return @ geoip_record_by_name($ip);
 	}
 }
