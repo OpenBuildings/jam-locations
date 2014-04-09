@@ -1,27 +1,35 @@
---- 
+---
 language: php
 
 php:
   - 5.4
 
-script:
-  - phpunit --coverage-clover build/logs/clover.xml
+notifications:
+  email: false
+  slack:
+    secure: bisEsP1bcAz0E9xM28UASkTpu+MbyhRscptM7BoB9PtjBimK8JsXLIVL9u/rvvjDRfa9sBZunbom8U0xyZv4N14vUWyHFfagf0akEZ5s6pZh4TWgkfaa97oWijdyqkVDOUgBTw9n7/SLUkYmFlkud2Dq9LqAe5Ssk0ZuCJOgSBY=
 
-before_script:
+install:
   - sudo apt-get install geoip-bin
   - sudo apt-get install geoip-database
   - sudo apt-get install libgeoip-dev
+  - pecl install geoip
+  - composer selfupdate
+  - composer install --no-interaction
+
+before_script:
   - ls -l /usr/share/GeoIP
   - wget https://github.com/downloads/lunetics/TimezoneBundle/GeoLiteCity.dat.gz
   - gunzip GeoLiteCity.dat.gz
   - sudo mkdir -p /usr/share/GeoIP
   - sudo mv GeoLiteCity.dat /usr/share/GeoIP/GeoIPCity.dat
-  - pecl install geoip
   - mkdir -p build/logs
-  - composer require --dev satooshi/php-coveralls:dev-master
-  - composer install
   - mysql -e 'create database `test-jam-locations`;'
   - mysql --default-character-set=utf8 test-jam-locations < tests/test_data/structure.sql
 
+script:
+  - phpunit --coverage-clover build/logs/clover.xml
+
 after_script:
-  - php vendor/bin/coveralls -v
+  - wget https://scrutinizer-ci.com/ocular.phar
+  - php ocular.phar code-coverage:upload --format=php-clover build/logs/clover.xml
