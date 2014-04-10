@@ -23,18 +23,16 @@ Kohana::modules(array(
 Kohana::$config
 	->load('database')
 		->set('default', array(
-			'type'       => 'MySQL',
+			'type'       => 'PDO',
 			'connection' => array(
-				'hostname'   => 'localhost',
-				'database'   => 'test-jam-locations',
-				'username'   => 'root',
-				'password'   => '',
-				'persistent' => TRUE,
-			),
-			'table_prefix' => '',
-			'charset'      => 'utf8',
-			'caching'      => FALSE,
-		));
-
+                'dsn'        => 'mysql:dbname=test-jam-locations;host=127.0.0.1',
+                'username'   => 'root',
+                'password'   => '',
+                'persistent' => TRUE,
+            ),
+            'table_prefix' => '',
+            'charset'      => 'utf8',
+            'caching'      => FALSE,
+        ));
 
 Kohana::$environment = Kohana::TESTING;
