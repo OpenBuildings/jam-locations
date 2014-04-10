@@ -23,7 +23,7 @@
 		"source": "https://github.com/OpenBuildings/jam-locations"
 	},
 	"require": {
-		"php": ">=5.4.0",
+		"php": ">=5.3.0",
 		"composer/installers": "*",
 		"openbuildings/jam-closuretable": "0.1.*"
 	},
