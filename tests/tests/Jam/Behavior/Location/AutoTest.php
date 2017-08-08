@@ -48,7 +48,10 @@ class Jam_Behavior_Location_AutoTest extends Testcase_Extended {
 		$this->env->backup_and_set(array('Request::$client_ip' => $ip));
 
 		$user = Jam::build('user');
-		$behavior = $this->getMock('Jam_Behavior_Location_Auto', array('geoip_record'), array(array('locations' => array('city' => 'city', 'country' => 'country_name'))));
+		$behavior = $this->getMockBuilder(Jam_Behavior_Location_Auto::class)
+			->setMethods(array('geoip_record'))
+			->setConstructorArgs(array(array('locations' => array('city' => 'city', 'country' => 'country_name'))))
+			->getMock();
 
 		$behavior
 			->expects($this->once())

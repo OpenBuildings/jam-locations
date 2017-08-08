@@ -4,3 +4,6 @@
 /build/
 /modules/
 /nbproject/
+
+# Ignore local configuration
+/phpunit.xml

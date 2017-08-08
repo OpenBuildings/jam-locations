@@ -1,8 +1,9 @@
 <?php
 
 use Openbuildings\EnvironmentBackup as EB;
+use PHPUnit\Framework\TestCase;
 
-abstract class Testcase_Extended extends PHPUnit_Framework_TestCase {
+abstract class Testcase_Extended extends TestCase {
 
 	public $env;
 	
@@ -10,11 +11,9 @@ abstract class Testcase_Extended extends PHPUnit_Framework_TestCase {
 	{
 		parent::setUp();
 		Database::instance()->begin();
-		// Jam_Association_Creator::current(1);
 
 		$this->env = new EB\Environment(array(
 			'static' => new EB\Environment_Group_Static(),
-			// 'config' => new EB\Environment_Group_Config(),
 		));
 	}
 
