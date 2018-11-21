@@ -5,6 +5,11 @@
  * @author     Ivan K <ikerin@gmail.com>
  * @copyright  (c) 2013 OpenBuildings Ltd.
  * @license    http://spdx.org/licenses/BSD-3-Clause
+ *
+ * @property int    $id
+ * @property string $name
+ * @property string $short_name
+ * @property string $type
  */
 class Kohana_Model_Location extends Jam_Model {
 
