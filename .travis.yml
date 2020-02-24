@@ -4,8 +4,9 @@ language: php
 sudo: false
 
 php:
-  - 7.0
   - 7.1
+  - 7.2
+  - 7.3
 
 env:
   - DEPS=normal
@@ -35,6 +36,9 @@ install:
   - if [ "$DEPS" = "highest" ]; then travis_retry composer update --no-interaction; fi;
   - if [ "$DEPS" = "lowest" ]; then travis_retry composer update --no-interaction --prefer-lowest --prefer-stable; fi;
 
+services:
+  - mysql
+
 before_script:
   - ls -l /usr/share/GeoIP
   - wget https://github.com/downloads/lunetics/TimezoneBundle/GeoLiteCity.dat.gz
@@ -46,7 +50,7 @@ before_script:
   - mysql --default-character-set=utf8 test-jam-locations < tests/test_data/structure.sql
 
 script:
-  - vendor/bin/phpunit --coverage-clover build/logs/clover.xml
+  - ./vendor/bin/phpunit --coverage-clover build/logs/clover.xml
 
 after_script:
   - wget https://scrutinizer-ci.com/ocular.phar

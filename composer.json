@@ -23,15 +23,15 @@
 		"source": "https://github.com/OpenBuildings/jam-locations"
 	},
 	"require": {
-		"php": "^7",
+		"php": "^7.1",
 		"composer/installers": "^1",
-		"openbuildings/jam": "^0.5",
+		"openbuildings/jam": "^0.5.13",
 		"openbuildings/jam-closuretable": "^0.1"
 	},
 	"require-dev": {
 		"openbuildings/kohana-test-bootstrap": "^0.2",
 		"openbuildings/environment-backup": "^0.1.2",
-		"phpunit/phpunit": "^6.3"
+		"phpunit/phpunit": "^7"
 	},
 	"autoload-dev": {
 		"psr-0": {
@@ -40,7 +40,7 @@
 	},
 	"config": {
 		"platform": {
-			"php": "7.0"
+			"php": "7.1.8"
 		}
 	}
 }
